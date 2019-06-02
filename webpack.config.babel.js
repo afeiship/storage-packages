@@ -23,7 +23,7 @@ export default {
     hints: NODE_ENV === 'production' ? 'warning' : false
   },
   devServer: {
-    hot: true,
+    hot: false,
     host: '0.0.0.0',
     stats: 'errors-only'
   },
