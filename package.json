@@ -4,17 +4,14 @@
   "description": "Webpack app kits lite version for react.",
   "main": "index.js",
   "scripts": {
-    "dev": "webpack-dev-server"
+    "dev": "webpack-dev-server",
+    "build": "webpack"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/afeiship/webpack-react-lite-kits.git"
   },
-  "keywords": [
-    "webpack",
-    "react",
-    "kits"
-  ],
+  "keywords": ["webpack", "react", "kits"],
   "author": "afei",
   "license": "MIT",
   "bugs": {
