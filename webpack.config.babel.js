@@ -15,7 +15,24 @@ export default {
       },
       {
         test: /\.scss$/,
-        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
+        use: [
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              sourceMap: true
+            }
+          },
+          {
+            loader: 'postcss-loader'
+          },
+          {
+            loader: 'sass-loader',
+            options: {
+              sourceMap: true
+            }
+          }
+        ]
       }
     ]
   },
@@ -24,6 +41,7 @@ export default {
   },
   devServer: {
     host: '0.0.0.0',
+    port: 3006,
     compress: true,
     stats: 'errors-only'
   },
