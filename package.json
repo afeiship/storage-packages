@@ -4,7 +4,7 @@
   "description": "Webpack app kits lite version for react.",
   "main": "index.js",
   "scripts": {
-    "dev":"webpack-dev-server"
+    "dev": "webpack-dev-server"
   },
   "repository": {
     "type": "git",
@@ -20,5 +20,10 @@
   "bugs": {
     "url": "https://github.com/afeiship/webpack-react-lite-kits/issues"
   },
-  "homepage": "https://github.com/afeiship/webpack-react-lite-kits#readme"
+  "homepage": "https://github.com/afeiship/webpack-react-lite-kits#readme",
+  "dependencies": {
+    "webpack": "^4.32.2",
+    "webpack-cli": "^3.3.2",
+    "webpack-dev-server": "^3.5.1"
+  }
 }
