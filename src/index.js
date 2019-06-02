@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 
 function App() {
   return (
-    <div>
-      <h1>Hello blog readers!</h1>
+    <div className="container">
+      <h1>Hello readers!</h1>
     </div>
   );
 }
