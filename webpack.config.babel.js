@@ -1,9 +1,10 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import WebpackBar from 'webpackbar';
 
+const { NODE_ENV } = process.env;
 
 export default {
-  mode: process.env.NODE_ENV,
+  mode: NODE_ENV,
   entry: './src/index.js',
   module: {
     rules: [
@@ -15,7 +16,7 @@ export default {
     ]
   },
   performance: {
-    hints: process.env.NODE_ENV === 'production' ? 'warning' : false
+    hints: NODE_ENV === 'production' ? 'warning' : false
   },
   plugins: [
     new WebpackBar(),
