@@ -12,11 +12,20 @@ export default {
         test: /\.js$/,
         use: 'babel-loader',
         exclude: /node_modules/
+      },
+      {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'postcss-loader', 'sass-loader']
       }
     ]
   },
   performance: {
     hints: NODE_ENV === 'production' ? 'warning' : false
+  },
+  devServer: {
+    hot: true,
+    host: '0.0.0.0',
+    stats: 'errors-only'
   },
   plugins: [
     new WebpackBar(),
