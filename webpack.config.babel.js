@@ -24,6 +24,7 @@ export default {
   },
   devServer: {
     host: '0.0.0.0',
+    compress: true,
     stats: 'errors-only'
   },
   plugins: [
