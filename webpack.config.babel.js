@@ -12,6 +12,9 @@ export default {
       }
     ]
   },
+  performance: {
+    hints: process.env.NODE_ENV === 'production' ? 'warning' : false
+  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.ejs',
