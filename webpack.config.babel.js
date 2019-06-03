@@ -1,11 +1,16 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import WebpackBar from 'webpackbar';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 
 const { NODE_ENV } = process.env;
 
 export default {
   mode: NODE_ENV,
   entry: './src/index.js',
+  output: {
+    filename: '[name].[hash].js',
+    publicPath: './'
+  },
   module: {
     rules: [
       {
@@ -46,6 +51,7 @@ export default {
     stats: 'errors-only'
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new WebpackBar(),
     new HtmlWebpackPlugin({
       template: './src/index.ejs',
