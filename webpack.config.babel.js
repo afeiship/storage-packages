@@ -8,7 +8,7 @@ export default {
   mode: NODE_ENV,
   entry: './src/index.js',
   output: {
-    filename: '[name].[hash].js',
+    filename: '[name].[hash:8].js',
   },
   module: {
     rules: [
@@ -46,7 +46,6 @@ export default {
   devServer: {
     host: '0.0.0.0',
     port: 3006,
-    compress: true,
     stats: 'errors-only'
   },
   plugins: [
