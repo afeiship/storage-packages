@@ -3,7 +3,6 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import WebpackBar from 'webpackbar';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import AutoDllPlugin from 'autodll-webpack-plugin';
-import { join } from 'path';
 
 const { NODE_ENV } = process.env;
 
