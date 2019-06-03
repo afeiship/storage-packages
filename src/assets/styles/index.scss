@@ -1,5 +1,11 @@
+@import "~webkit-sass-reset/dist/webkit-sass-reset.scss";
+@import "~webkit-sassui-short-name/dist/webkit-sassui-short-name.scss";
+
 body {
   background: #fefefe;
   color: #00f;
   font-size: 20px;
+  h1 {
+    font-size: 18px;
+  }
 }

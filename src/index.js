@@ -6,8 +6,9 @@ import './assets/styles/index.scss';
 function App() {
   console.log(nx, nx.VERSION);
   return (
-    <div className="container">
+    <div className="clearfix container">
       <h1>Hello readers!</h1>
+      <span className="r">RIGHT</span>
     </div>
   );
 }

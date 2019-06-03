@@ -3,6 +3,9 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import WebpackBar from 'webpackbar';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import AutoDllPlugin from 'autodll-webpack-plugin';
+import PurgecssPlugin from 'purgecss-webpack-plugin';
+import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import glob from 'glob';
 
 const { NODE_ENV } = process.env;
 
@@ -53,6 +56,7 @@ export default {
     stats: 'errors-only'
   },
   plugins: [
+    new CleanWebpackPlugin(),
     new WebpackBar(),
     new webpack.NamedModulesPlugin(),
     new webpack.HashedModuleIdsPlugin(),
@@ -69,6 +73,9 @@ export default {
     }),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css'
+    }),
+    new PurgecssPlugin({
+      paths: glob.sync('src/**/*', { nodir: true })
     })
   ]
 };
