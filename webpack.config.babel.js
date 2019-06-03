@@ -1,5 +1,6 @@
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import WebpackBar from 'webpackbar';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 
 const { NODE_ENV } = process.env;
@@ -8,7 +9,7 @@ export default {
   mode: NODE_ENV,
   entry: './src/index.js',
   output: {
-    filename: '[name].[hash:8].js',
+    filename: '[name].[hash:8].js'
   },
   module: {
     rules: [
@@ -21,6 +22,7 @@ export default {
         test: /\.scss$/,
         use: [
           'style-loader',
+          MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
@@ -54,6 +56,9 @@ export default {
     new HtmlWebpackPlugin({
       template: './src/index.ejs',
       filename: 'index.html'
+    }),
+    new MiniCssExtractPlugin({
+      filename: '[name].[contenthash:8].css'
     })
   ]
 };
