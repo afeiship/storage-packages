@@ -2,7 +2,8 @@ import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import WebpackBar from 'webpackbar';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import AutoDllPlugin from 'autodll-webpack-plugin';
+import { join } from 'path';
 
 const { NODE_ENV } = process.env;
 
@@ -10,7 +11,7 @@ export default {
   mode: NODE_ENV,
   entry: './src/index.js',
   output: {
-    filename: '[name].[hash:8].js'
+    filename: '[name].[hash].js'
   },
   module: {
     rules: [
@@ -53,7 +54,6 @@ export default {
     stats: 'errors-only'
   },
   plugins: [
-    new CleanWebpackPlugin(),
     new WebpackBar(),
     new webpack.NamedModulesPlugin(),
     new webpack.HashedModuleIdsPlugin(),
@@ -61,8 +61,15 @@ export default {
       template: './src/index.ejs',
       filename: 'index.html'
     }),
+    new AutoDllPlugin({
+      inject: true,
+      filename: '[name].[hash].js',
+      entry: {
+        vendor: ['react', 'react-dom', 'next-js-core2']
+      }
+    }),
     new MiniCssExtractPlugin({
-      filename: '[name].[contenthash:8].css'
+      filename: '[name].[contenthash].css'
     })
   ]
 };
