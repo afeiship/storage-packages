@@ -9,7 +9,6 @@ export default {
   entry: './src/index.js',
   output: {
     filename: '[name].[hash].js',
-    publicPath: './'
   },
   module: {
     rules: [
