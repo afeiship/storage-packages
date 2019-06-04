@@ -68,7 +68,7 @@ export default {
       inject: true,
       filename: '[name].[hash].js',
       entry: {
-        vendor: ['react', 'react-dom', 'next-js-core2']
+        vendor: ['next-js-core2']
       }
     }),
     new MiniCssExtractPlugin({
