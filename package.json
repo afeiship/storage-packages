@@ -4,8 +4,9 @@
   "description": "Webpack app kits lite version for react.",
   "main": "index.js",
   "scripts": {
-    "dev": "cross-env NODE_ENV=development && webpack-dev-server",
-    "build": "cross-env NODE_ENV=production && webpack"
+    "dll:scripts":"cross-env NODE_ENV=production webpack --config webpack.dll-scripts.config.babel.js",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server",
+    "build": "cross-env NODE_ENV=production webpack"
   },
   "repository": {
     "type": "git",
@@ -52,10 +53,14 @@
     "webpackbar": "^3.2.0"
   },
   "devDependencies": {
+    "next-chunk": "github:afeiship/next-chunk",
+    "next-guid": "github:afeiship/next-guid",
+    "next-js-core2": "github:afeiship/next-js-core2",
+    "next-json": "github:afeiship/next-json",
+    "next-time-chunk": "github:afeiship/next-time-chunk",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "webkit-sass-reset": "github:afeiship/webkit-sass-reset",
-    "webkit-sassui-short-name": "github:afeiship/webkit-sassui-short-name",
-    "next-js-core2": "github:afeiship/next-js-core2"
+    "webkit-sassui-short-name": "github:afeiship/webkit-sassui-short-name"
   }
 }

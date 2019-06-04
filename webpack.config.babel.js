@@ -2,7 +2,6 @@ import webpack from 'webpack';
 import HtmlWebpackPlugin from 'html-webpack-plugin';
 import WebpackBar from 'webpackbar';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import AutoDllPlugin from 'autodll-webpack-plugin';
 import PurgecssPlugin from 'purgecss-webpack-plugin';
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
 import TerserJSPlugin from 'terser-webpack-plugin';
@@ -53,10 +52,7 @@ export default {
     hints: NODE_ENV === 'production' ? 'warning' : false
   },
   optimization: {
-    minimizer: [
-      new TerserJSPlugin(),
-      new OptimizeCSSAssetsPlugin()
-    ]
+    minimizer: [new TerserJSPlugin(), new OptimizeCSSAssetsPlugin()]
   },
   devServer: {
     host: '0.0.0.0',
@@ -72,13 +68,18 @@ export default {
       template: './src/index.ejs',
       filename: 'index.html'
     }),
-    new AutoDllPlugin({
-      inject: true,
-      filename: '[name].[contenthash].js',
-      entry: {
-        vendor: ['next-js-core2']
-      }
+    new webpack.DllReferencePlugin({
+      context: dirname,
+      manifest: resolve('dist/vendors/manifest.json')
     }),
+    new AddAssetHtmlPlugin([
+      {
+        includeSourcemap: false,
+        hash: true,
+        filepath: resolve(dirname, 'dist/vendors/vendors.*.js'),
+        outputPath: 'vendors',
+      }
+    ]),
     new MiniCssExtractPlugin({
       filename: '[name].[contenthash].css',
       chunkFilename: '[id].css'
