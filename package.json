@@ -11,7 +11,11 @@
     "type": "git",
     "url": "git+https://github.com/afeiship/webpack-react-lite-kits.git"
   },
-  "keywords": ["webpack", "react", "kits"],
+  "keywords": [
+    "webpack",
+    "react",
+    "kits"
+  ],
   "author": "afei",
   "license": "MIT",
   "bugs": {
@@ -22,9 +26,11 @@
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
     "@babel/plugin-transform-async-to-generator": "^7.4.4",
+    "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/preset-env": "^7.4.5",
     "@babel/preset-react": "^7.0.0",
     "@babel/register": "^7.4.4",
+    "@babel/runtime": "^7.4.5",
     "autodll-webpack-plugin": "^0.4.2",
     "autoprefixer": "^9.5.1",
     "babel-loader": "^8.0.6",

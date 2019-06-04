@@ -1,9 +1,12 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import nx from 'next-js-core2';
+import delay from './components/delay';
 import './assets/styles/index.scss';
 
-function App() {
+async function App() {
+  console.log('start render!');
+  await delay(3000)
   console.log(nx, nx.VERSION);
   return (
     <div className="clearfix container">
