@@ -4,7 +4,7 @@
   "description": "Webpack app kits lite version for react.",
   "main": "index.js",
   "scripts": {
-    "dll:scripts": "cross-env NODE_ENV=production webpack --config webpack.dll-scripts.config.babel.js",
+    "dll:scripts": "cross-env NODE_ENV=production webpack --config webpack.dll.config.babel.js",
     "dev": "cross-env NODE_ENV=development webpack-dev-server",
     "build": "cross-env NODE_ENV=production webpack"
   },
