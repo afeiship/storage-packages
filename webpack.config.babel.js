@@ -3,11 +3,13 @@ import HtmlWebpackPlugin from 'html-webpack-plugin';
 import WebpackBar from 'webpackbar';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 import PurgecssPlugin from 'purgecss-webpack-plugin';
-import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+;
 import TerserJSPlugin from 'terser-webpack-plugin';
 import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import glob from 'glob';
+import { resolve } from 'path';
 
+const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 const { NODE_ENV } = process.env;
 
 export default {
@@ -60,7 +62,6 @@ export default {
     stats: 'errors-only'
   },
   plugins: [
-    new CleanWebpackPlugin(),
     new WebpackBar(),
     new webpack.NamedModulesPlugin(),
     new webpack.HashedModuleIdsPlugin(),
@@ -69,15 +70,15 @@ export default {
       filename: 'index.html'
     }),
     new webpack.DllReferencePlugin({
-      context: dirname,
+      context: __dirname,
       manifest: resolve('dist/vendors/manifest.json')
     }),
     new AddAssetHtmlPlugin([
       {
         includeSourcemap: false,
         hash: true,
-        filepath: resolve(dirname, 'dist/vendors/vendors.*.js'),
-        outputPath: 'vendors',
+        filepath: resolve(__dirname, 'dist/vendor-*.js'),
+        outputPath: 'vendors'
       }
     ]),
     new MiniCssExtractPlugin({
