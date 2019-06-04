@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "dll": "webpack --config webpack.dll.config.babel.js",
-    "dev": "cross-env NODE_ENV=development npm run dll; webpack-dev-server",
-    "build": "cross-env NODE_ENV=production npm run dll; webpack"
+    "dev": "cross-env NODE_ENV=development npm run dll & webpack-dev-server",
+    "build": "cross-env NODE_ENV=production npm run dll & webpack --mode=production"
   },
   "repository": {
     "type": "git",
