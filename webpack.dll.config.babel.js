@@ -1,6 +1,10 @@
 import webpack from 'webpack';
 import { resolve } from 'path';
-import { CleanWebpackPlugin } from 'clean-webpack-plugin';
+import NxLoadPlugins from 'next-load-plugins';
+
+const $ = NxLoadPlugins.load();
+
+console.log('load plugins:->', $)
 
 export default {
   mode: process.env.NODE_ENV,
@@ -14,7 +18,7 @@ export default {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(),
+    new $.CleanWebpackPlugin(),
     new webpack.DllPlugin({
       path: resolve(__dirname, 'dist/vendors/manifest.json'),
       name: '[name]_library'
