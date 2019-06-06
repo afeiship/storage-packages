@@ -1,16 +1,17 @@
 import webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin';
-import WebpackBar from 'webpackbar';
-import MiniCssExtractPlugin from 'mini-css-extract-plugin';
-import PurgecssPlugin from 'purgecss-webpack-plugin';
-;
-import TerserJSPlugin from 'terser-webpack-plugin';
-import OptimizeCSSAssetsPlugin from 'optimize-css-assets-webpack-plugin';
 import glob from 'glob';
 import { resolve } from 'path';
 
-const AddAssetHtmlPlugin = require('add-asset-html-webpack-plugin');
 const { NODE_ENV } = process.env;
+const {
+  HtmlWebpackPlugin,
+  Webpackbar,
+  MiniCssExtractPlugin,
+  PurgecssWebpackPlugin,
+  TerserWebpackPlugin,
+  OptimizeCssAssetsWebpackPlugin,
+  AddAssetHtmlWebpackPlugin
+} = require('next-load-plugins').load();
 
 export default {
   mode: NODE_ENV,
@@ -54,7 +55,7 @@ export default {
     hints: NODE_ENV === 'production' ? 'warning' : false
   },
   optimization: {
-    minimizer: [new TerserJSPlugin(), new OptimizeCSSAssetsPlugin()]
+    minimizer: [new TerserWebpackPlugin(), new OptimizeCssAssetsWebpackPlugin()]
   },
   devServer: {
     host: '0.0.0.0',
@@ -62,7 +63,7 @@ export default {
     stats: 'errors-only'
   },
   plugins: [
-    new WebpackBar(),
+    new Webpackbar(),
     new webpack.NamedModulesPlugin(),
     new webpack.HashedModuleIdsPlugin(),
     new HtmlWebpackPlugin({
@@ -73,7 +74,7 @@ export default {
       context: __dirname,
       manifest: resolve('dist/vendors/manifest.json')
     }),
-    new AddAssetHtmlPlugin([
+    new AddAssetHtmlWebpackPlugin([
       {
         includeSourcemap: false,
         hash: true,
@@ -85,7 +86,7 @@ export default {
       filename: '[name].[contenthash].css',
       chunkFilename: '[id].css'
     }),
-    new PurgecssPlugin({
+    new PurgecssWebpackPlugin({
       paths: glob.sync('src/**/*', { nodir: true })
     })
   ]
