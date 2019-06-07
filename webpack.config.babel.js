@@ -3,6 +3,7 @@ import glob from 'glob';
 import { resolve } from 'path';
 
 const { NODE_ENV } = process.env;
+const isDev = NODE_ENV === 'development';
 const {
   HtmlWebpackPlugin,
   Webpackbar,
@@ -13,7 +14,7 @@ const {
   AddAssetHtmlWebpackPlugin
 } = require('next-load-plugins').load();
 
-const isDev = NODE_ENV === 'development';
+
 
 export default {
   mode: NODE_ENV,
