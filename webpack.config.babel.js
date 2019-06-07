@@ -13,6 +13,8 @@ const {
   AddAssetHtmlWebpackPlugin
 } = require('next-load-plugins').load();
 
+const isDev = NODE_ENV === 'development';
+
 export default {
   mode: NODE_ENV,
   entry: './src/index.js',
@@ -29,9 +31,7 @@ export default {
       {
         test: /\.scss$/,
         use: [
-          NODE_ENV === 'development'
-            ? 'style-loader'
-            : MiniCssExtractPlugin.loader,
+          isDev ? 'style-loader' : MiniCssExtractPlugin.loader,
           {
             loader: 'css-loader',
             options: {
@@ -52,7 +52,7 @@ export default {
     ]
   },
   performance: {
-    hints: NODE_ENV === 'production' ? 'warning' : false
+    hints: isDev ? false : 'warning'
   },
   optimization: {
     minimizer: [new TerserWebpackPlugin(), new OptimizeCssAssetsWebpackPlugin()]
