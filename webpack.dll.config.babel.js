@@ -6,13 +6,7 @@ const { CleanWebpackPlugin } = require('next-load-plugins').load();
 export default {
   mode: process.env.NODE_ENV,
   entry: {
-    'vendor-react-packages': ['react', 'react-dom'],
-    'vendor-next-packages': [
-      'next-js-core2',
-      'next-json',
-      'next-guid',
-      'next-chunk'
-    ]
+    vendors: ['react', 'react-dom']
   },
   plugins: [
     new CleanWebpackPlugin(),

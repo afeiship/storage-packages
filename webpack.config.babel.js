@@ -78,7 +78,7 @@ export default {
       {
         includeSourcemap: false,
         hash: true,
-        filepath: resolve(__dirname, 'dist/vendor-*.js'),
+        filepath: resolve(__dirname, 'dist/vendors.js'),
         outputPath: 'vendors'
       }
     ]),
