@@ -8,3 +8,5 @@
 - https://webpack.js.org/concepts
 - https://segmentfault.com/a/1190000014247030
 - https://github.com/zhoulujun/wepack4-react-project-template
+- https://www.jianshu.com/p/b9bf995f3712
+- https://github.com/amireh/happypack
