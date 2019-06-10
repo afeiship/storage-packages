@@ -14,8 +14,6 @@ const {
   AddAssetHtmlWebpackPlugin
 } = require('next-load-plugins').load();
 
-
-
 export default {
   mode: NODE_ENV,
   entry: './src/index.js',
@@ -67,20 +65,21 @@ export default {
     new Webpackbar(),
     new webpack.NamedModulesPlugin(),
     new webpack.HashedModuleIdsPlugin(),
-    new HtmlWebpackPlugin({
-      template: './src/index.ejs',
-      filename: 'index.html'
-    }),
     new webpack.DllReferencePlugin({
       context: __dirname,
       manifest: resolve('dist/vendors/manifest.json')
     }),
+    new HtmlWebpackPlugin({
+      template: './src/index.ejs',
+      filename: 'index.html'
+    }),
     new AddAssetHtmlWebpackPlugin([
       {
         includeSourcemap: false,
-        hash: true,
-        filepath: resolve(__dirname, 'dist/vendors.js'),
-        outputPath: 'vendors'
+        hash: false,
+        filepath: resolve(__dirname, 'dist/vendors/dll-*.js'),
+        outputPath: 'vendors',
+        publicPath: 'vendors'
       }
     ]),
     new MiniCssExtractPlugin({
