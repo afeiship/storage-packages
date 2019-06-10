@@ -28,7 +28,7 @@ export default {
     rules: [
       {
         test: /\.js$/,
-        loader: 'happypack/loader',
+        use: ['happypack/loader?id=bable'],
         exclude: /node_modules/
       },
       {
@@ -58,10 +58,7 @@ export default {
     hints: isDev ? false : 'warning'
   },
   optimization: {
-    minimizer: [
-      new TerserWebpackPlugin(),
-      new OptimizeCssAssetsWebpackPlugin()
-    ]
+    minimizer: [new TerserWebpackPlugin(), new OptimizeCssAssetsWebpackPlugin()]
   },
   devServer: {
     host: '0.0.0.0',
@@ -73,6 +70,7 @@ export default {
     new HappyPack({
       loaders: [
         {
+          id: 'babel',
           loader: 'babel-loader',
           options: {
             cacheDirectory: true

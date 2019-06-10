@@ -10,3 +10,4 @@
 - https://github.com/zhoulujun/wepack4-react-project-template
 - https://www.jianshu.com/p/b9bf995f3712
 - https://github.com/amireh/happypack
+- https://www.qdtalk.com/2018/11/16/webpack4plugin-2/
