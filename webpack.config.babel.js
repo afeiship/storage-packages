@@ -28,7 +28,7 @@ export default {
     rules: [
       {
         test: /\.js$/,
-        loader: 'happypack/loader?id=happyBabel',
+        loader: 'happypack/loader',
         exclude: /node_modules/
       },
       {
@@ -68,10 +68,12 @@ export default {
   plugins: [
     new Webpackbar(),
     new HappyPack({
-      id: 'happyBabel',
       loaders: [
         {
-          loader: 'babel-loader?cacheDirectory=true'
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: true
+          }
         }
       ],
       threadPool: happyThreadPool,
