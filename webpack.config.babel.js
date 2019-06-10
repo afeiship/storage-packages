@@ -14,6 +14,10 @@ const {
   AddAssetHtmlWebpackPlugin
 } = require('next-load-plugins').load();
 
+const HappyPack = require('happypack');
+const os = require('os');
+const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length });
+
 export default {
   mode: NODE_ENV,
   entry: './src/index.js',
@@ -24,7 +28,7 @@ export default {
     rules: [
       {
         test: /\.js$/,
-        use: 'babel-loader',
+        loader: 'happypack/loader?id=happyBabel',
         exclude: /node_modules/
       },
       {
@@ -63,6 +67,16 @@ export default {
   },
   plugins: [
     new Webpackbar(),
+    new HappyPack({
+      id: 'happyBabel',
+      loaders: [
+        {
+          loader: 'babel-loader?cacheDirectory=true'
+        }
+      ],
+      threadPool: happyThreadPool,
+      verbose: true
+    }),
     new webpack.NamedModulesPlugin(),
     new webpack.HashedModuleIdsPlugin(),
     new webpack.DllReferencePlugin({
