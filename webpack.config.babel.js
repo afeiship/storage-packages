@@ -58,7 +58,10 @@ export default {
     hints: isDev ? false : 'warning'
   },
   optimization: {
-    minimizer: [new TerserWebpackPlugin(), new OptimizeCssAssetsWebpackPlugin()]
+    minimizer: [
+      new TerserWebpackPlugin(),
+      new OptimizeCssAssetsWebpackPlugin()
+    ]
   },
   devServer: {
     host: '0.0.0.0',
