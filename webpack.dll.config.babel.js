@@ -15,9 +15,6 @@ export default {
     filename: 'vendors/dll-[name].[chunkhash].js',
     library: '[name]_library'
   },
-  resolve: {
-    modules: ['node_modules', 'spritesmith-generated']
-  },
   plugins: [
     new CleanWebpackPlugin(),
     new Webpackbar(),
@@ -36,6 +33,9 @@ export default {
       },
       apiOptions: {
         cssImageRef: '~assets/sprite/icons.png'
+      },
+      spritesmithOptions: {
+        algorithm: 'top-down'
       }
     })
   ]

@@ -36,7 +36,17 @@ export default {
         use: ['happypack/loader?id=babel'],
         exclude: /node_modules/
       },
-      { test: /\.png$/, use: ['file-loader?name=i/[hash].[ext]'] },
+      {
+        test: /\.png$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {
+              name: 'assets/images/sprite-[hash].[ext]'
+            }
+          }
+        ]
+      },
       {
         test: /\.scss$/,
         use: [
