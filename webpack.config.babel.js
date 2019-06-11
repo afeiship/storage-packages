@@ -24,6 +24,11 @@ export default {
   output: {
     filename: '[name].[hash].js'
   },
+  resolve: {
+    alias: {
+      assets: resolve(__dirname, './src/assets')
+    }
+  },
   module: {
     rules: [
       {
@@ -31,6 +36,7 @@ export default {
         use: ['happypack/loader?id=babel'],
         exclude: /node_modules/
       },
+      { test: /\.png$/, use: ['file-loader?name=i/[hash].[ext]'] },
       {
         test: /\.scss$/,
         use: [

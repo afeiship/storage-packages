@@ -16,7 +16,7 @@ class App extends React.Component {
     return (
       <div className="clearfix container">
         <h1 className="l">Hello readers!</h1>
-        <span className="r">RIGHT</span>
+        <span className="icon-audio r">RIGHT</span>
       </div>
     );
   }
