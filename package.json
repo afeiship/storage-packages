@@ -20,7 +20,7 @@
   },
   "lint-staged": {
     "linters": {
-      "*.{js|jsx|less|sass|css}": ["npm run pretty", "git add"]
+      "src/**/*.{js|jsx|less|sass|css}": ["npm run pretty", "git add"]
     },
     "ignore": ["**/dist/*.js"]
   },
