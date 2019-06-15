@@ -7,6 +7,7 @@
     "precise-commits": "precise-commits",
     "pretty": "prettier --write \"src/**/*.js\"",
     "lint": "eslint src",
+    "lintfix": "eslint src --fix",
     "start": "node build/server.js",
     "dll": "webpack --config webpack.dll.config.babel.js",
     "dev": "cross-env NODE_ENV=development npm run dll && webpack-dev-server",
@@ -21,11 +22,7 @@
     "type": "git",
     "url": "git+https://github.com/afeiship/webpack-react-lite-kits.git"
   },
-  "keywords": [
-    "webpack",
-    "react",
-    "kits"
-  ],
+  "keywords": ["webpack", "react", "kits"],
   "author": "afei",
   "license": "MIT",
   "bugs": {

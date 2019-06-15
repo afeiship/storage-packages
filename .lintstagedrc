@@ -1,7 +1,9 @@
 {
   "*.js": [
-    "eslint --fix --format=pretty",
-    "prettier --ignore-path .eslintignore --write",
+    "npm run pretty",
+    "npm run lintfix",
+    "git add --all",
+    "git commit -m 'auto: fix by lint-staged'"
   ],
   "ignore": [
     "**/dist/*.js"
