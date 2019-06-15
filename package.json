@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "precise-commits": "precise-commits",
-    "pretty": "prettier --write",
+    "pretty": "prettier --write \"src/**/*.js\"",
     "lint": "eslint src",
     "lintfix": "eslint src --fix",
     "start": "node build/server.js",
@@ -20,11 +20,7 @@
   },
   "lint-staged": {
     "linters": {
-      "*.{js,scss}": [
-        "npm run pretty",
-        "npm run lintfix",
-        "git add"
-      ]
+      "src/*": ["npm run pretty", "npm run lintfix", "git add"]
     },
     "ignore": ["**/dist/*.js"]
   },
