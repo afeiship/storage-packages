@@ -3,7 +3,8 @@ export default function(inInterval) {
     setTimeout(function() {
       // 模拟出错了，返回 ‘error’
       // reject('error');
-      // var test = 1234;
+      var abc = 12;
+      console.log(abc)
       resolve();
     }, inInterval);
   });
