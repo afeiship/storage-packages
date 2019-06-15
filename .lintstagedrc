@@ -1,6 +1,6 @@
 {
   "*.js": [
     "npm run precise-commits",
-    "eslint --fix"
+    "eslint src --fix"
   ]
 }
