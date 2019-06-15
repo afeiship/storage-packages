@@ -32,18 +32,19 @@ export default {
   module: {
     rules: [
       {
-        test: /\.js$/,
-        use: ['happypack/loader?id=babel'],
-        exclude: /node_modules/
-      },
-      {
-        test: /\.js$/,
+        test: /\.jsx?$/,
         loader: 'eslint-loader',
         enforce: 'pre',
         include: [resolve(__dirname, 'src')],
         options: {
+          formatter: require('eslint-friendly-formatter'),
           fix: true
         }
+      },
+      {
+        test: /\.js$/,
+        use: ['happypack/loader?id=babel'],
+        exclude: /node_modules/
       },
       {
         test: /\.png$/,
