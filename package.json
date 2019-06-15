@@ -6,7 +6,7 @@
   "scripts": {
     "precise-commits": "precise-commits",
     "pretty": "prettier --write",
-    "lint": "eslint",
+    "lint": "eslint src",
     "lintfix": "eslint src --fix",
     "start": "node build/server.js",
     "dll": "webpack --config webpack.dll.config.babel.js",
