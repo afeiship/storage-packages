@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "precise-commits": "precise-commits",
-    "pretty": "prettier --write \"src/**/*.js\"",
+    "pretty": "prettier --write",
     "lint": "eslint src",
     "lintfix": "eslint src --fix",
     "start": "node build/server.js",
