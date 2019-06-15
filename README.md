@@ -15,3 +15,4 @@
 - [用eslint + prettier + pre-commit管理项目(React)](https://segmentfault.com/a/1190000015862803)
 - [husky](https://zhuanlan.zhihu.com/p/35913229)
 - [lint-staged](https://github.com/okonet/lint-staged#configuration)
+- [git-hooks](https://github.com/PaicFE/blog/issues/10)
