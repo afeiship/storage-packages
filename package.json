@@ -5,8 +5,8 @@
   "main": "index.js",
   "scripts": {
     "precise-commits": "precise-commits",
-    "pretty": "prettier --write \"src/**/*.js\"",
-    "lint": "eslint src",
+    "pretty": "prettier --write",
+    "lint": "eslint",
     "lintfix": "eslint src --fix",
     "start": "node build/server.js",
     "dll": "webpack --config webpack.dll.config.babel.js",
@@ -20,7 +20,7 @@
   },
   "lint-staged": {
     "linters": {
-      "*,!.json": ["npm run pretty", "npm run lintfix", "git add"]
+      "*.js": ["npm run pretty", "npm run lintfix", "git add"]
     },
     "ignore": ["**/dist/*.js"]
   },
