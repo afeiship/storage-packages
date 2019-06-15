@@ -4,20 +4,22 @@
   "description": "Webpack app kits lite version for react.",
   "main": "index.js",
   "scripts": {
+    "lint": "eslint src",
     "start": "node build/server.js",
     "dll": "webpack --config webpack.dll.config.babel.js",
     "dev": "cross-env NODE_ENV=development npm run dll && webpack-dev-server",
     "build": "cross-env NODE_ENV=production npm run dll && webpack --mode=production"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint"
+    }
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/afeiship/webpack-react-lite-kits.git"
   },
-  "keywords": [
-    "webpack",
-    "react",
-    "kits"
-  ],
+  "keywords": ["webpack", "react", "kits"],
   "author": "afei",
   "license": "MIT",
   "bugs": {
@@ -55,6 +57,7 @@
     "file-loader": "^4.0.0",
     "happypack": "^5.0.1",
     "html-webpack-plugin": "^3.2.0",
+    "husky": "^2.4.1",
     "mini-css-extract-plugin": "^0.7.0",
     "next-load-plugins": "github:afeiship/next-load-plugins",
     "node-sass": "^4.12.0",
