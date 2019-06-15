@@ -20,7 +20,12 @@
   },
   "lint-staged": {
     "linters": {
-      "*.js": ["npm run pretty", "npm run lintfix", "git add"]
+      "*.js": [
+        "npm run pretty",
+        "npm run lintfix",
+        "git add --all",
+        "git commit -m 'add: autofix by lint-staged'"
+      ]
     },
     "ignore": ["**/dist/*.js"]
   },
