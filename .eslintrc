@@ -1,0 +1,20 @@
+{
+  "env": {
+    "browser": true,
+    "commonjs": true,
+    "es6": true,
+    "node": true
+  },
+  "root": true,
+  "parserOptions": {
+    "parser": "babel-eslint"
+  },
+  "extends": ["standard", "plugin:prettier/recommended"],
+  "plugins": ["react"],
+  "rules": {
+    "prettier/prettier": "error",
+    "generator-star-spacing": "off",
+    "react/jsx-uses-vars": "warn",
+    "react/jsx-uses-react": 1
+  }
+}

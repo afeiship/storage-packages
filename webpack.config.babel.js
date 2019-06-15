@@ -37,6 +37,15 @@ export default {
         exclude: /node_modules/
       },
       {
+        test: /\.js$/,
+        loader: 'eslint-loader',
+        enforce: 'pre',
+        include: [resolve(__dirname, 'src')],
+        options: {
+          fix: true
+        }
+      },
+      {
         test: /\.png$/,
         use: [
           {

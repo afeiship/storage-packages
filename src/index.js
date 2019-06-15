@@ -5,11 +5,10 @@ import delay from './components/delay';
 import './assets/styles/index.scss';
 
 class App extends React.Component {
-
   async componentDidMount() {
     console.log('start render!!!');
     await delay(3000);
-    console.log('3s later:',nx, nx.VERSION);
+    console.log('3s later:', nx, nx.VERSION);
   }
 
   render() {
