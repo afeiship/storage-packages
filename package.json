@@ -18,6 +18,10 @@
       "pre-commit": "lint-staged"
     }
   },
+  "lint-staged": {
+    "*.js": ["npm run pretty", "git add"],
+    "ignore": ["**/dist/*.js"]
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/afeiship/webpack-react-lite-kits.git"

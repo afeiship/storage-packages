@@ -1,9 +1,0 @@
-{
-  "*.js": [
-    "npm run pretty",
-    "git add"
-  ],
-  "ignore": [
-    "**/dist/*.js"
-  ]
-}
