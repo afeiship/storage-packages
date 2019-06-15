@@ -4,6 +4,7 @@
   "description": "Webpack app kits lite version for react.",
   "main": "index.js",
   "scripts": {
+    "pretty": "prettier --write \"src/**/*.js\"",
     "lint": "eslint src",
     "start": "node build/server.js",
     "dll": "webpack --config webpack.dll.config.babel.js",
