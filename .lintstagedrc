@@ -1,6 +1,9 @@
 {
   "*.js": [
-    "npm run precise-commits",
-    "eslint src --fix"
+    "eslint --fix --format=pretty",
+    "prettier --ignore-path .eslintignore --write",
+  ],
+  "ignore": [
+    "**/dist/*.js"
   ]
 }
