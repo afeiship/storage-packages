@@ -20,7 +20,7 @@
   },
   "lint-staged": {
     "linters": {
-      "**/*.js": [
+      "*.{js,scss}": [
         "npm run pretty",
         "npm run lintfix",
         "git add"
