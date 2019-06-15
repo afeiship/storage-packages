@@ -1,9 +1,7 @@
 {
   "*.js": [
     "npm run pretty",
-    "npm run lintfix",
-    "git add --all",
-    "git commit -m 'auto: fix by lint-staged'"
+    "git add"
   ],
   "ignore": [
     "**/dist/*.js"
