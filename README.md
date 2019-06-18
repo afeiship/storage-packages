@@ -1,6 +1,10 @@
 # webpack-react-lite-kits
 > Webpack app kits lite version for react.
 
+## todo
+- Add `source.map`
+- Add min.js/.js/.js.map and css file for prod debug
+
 ## resources
 - [webpack-docs](https://webpack.js.org/concepts)
 - [How to set up React, webpack, and Babel 7 from scratch (2019)](https://www.valentinog.com/blog/babel/)
