@@ -6,8 +6,14 @@
     "node": true
   },
   "root": true,
+  "parser": "babel-eslint",
   "parserOptions": {
-    "parser": "babel-eslint"
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "jsx": true,
+      "modules": true,
+      "legacyDecorators": true
+    }
   },
   "extends": ["standard", "plugin:prettier/recommended"],
   "plugins": ["react"],

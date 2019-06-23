@@ -22,18 +22,22 @@
     "linters": {
       "*.js": [
         "npm run pretty",
-        "npm run lintfix",
-        "git add --all",
-        "git commit -m 'add: autofix by lint-staged'"
+        "npm run lintfix"
       ]
     },
-    "ignore": ["**/dist/*.js"]
+    "ignore": [
+      "**/dist/*.js"
+    ]
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/afeiship/webpack-react-lite-kits.git"
   },
-  "keywords": ["webpack", "react", "kits"],
+  "keywords": [
+    "webpack",
+    "react",
+    "kits"
+  ],
   "author": "afei",
   "license": "MIT",
   "bugs": {
@@ -43,6 +47,8 @@
   "dependencies": {
     "@babel/cli": "^7.4.4",
     "@babel/core": "^7.4.5",
+    "@babel/plugin-proposal-class-properties": "^7.4.4",
+    "@babel/plugin-proposal-decorators": "^7.4.4",
     "@babel/plugin-transform-async-to-generator": "^7.4.4",
     "@babel/plugin-transform-runtime": "^7.4.4",
     "@babel/preset-env": "^7.4.5",
@@ -52,6 +58,7 @@
     "add-asset-html-webpack-plugin": "^3.1.3",
     "autodll-webpack-plugin": "^0.4.2",
     "autoprefixer": "^9.5.1",
+    "babel-eslint": "^10.0.2",
     "babel-loader": "^8.0.6",
     "clean-webpack-plugin": "^3.0.0",
     "cross-env": "^5.2.0",
@@ -75,12 +82,14 @@
     "lint-staged": "^8.2.1",
     "mini-css-extract-plugin": "^0.7.0",
     "next-load-plugins": "github:afeiship/next-load-plugins",
+    "next-react-redux": "github:afeiship/next-react-redux",
     "node-sass": "^4.12.0",
     "optimize-css-assets-webpack-plugin": "^5.0.1",
     "postcss-loader": "^3.0.0",
     "precise-commits": "^1.0.2",
     "prettier": "^1.18.2",
     "purgecss-webpack-plugin": "^1.5.0",
+    "react-loadable": "^5.5.0",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.23.1",
     "terser-webpack-plugin": "^1.3.0",
