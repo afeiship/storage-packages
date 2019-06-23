@@ -32,5 +32,3 @@ export default class extends ReduxAppBase {
     );
   }
 }
-
-// ReactDOM.render(<App />, document.getElementById('app'));
