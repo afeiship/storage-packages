@@ -1,7 +1,7 @@
 import webpack from 'webpack';
 import glob from 'glob';
 import { resolve } from 'path';
-
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 const { NODE_ENV } = process.env;
 const isDev = NODE_ENV === 'development';
 const {
@@ -13,7 +13,7 @@ const {
   OptimizeCssAssetsWebpackPlugin,
   AddAssetHtmlWebpackPlugin
 } = require('next-load-plugins').load();
-
+const OfflinePlugin = require('offline-plugin');
 const HappyPack = require('happypack');
 const os = require('os');
 const happyThreadPool = HappyPack.ThreadPool({ size: os.cpus().length });
@@ -98,6 +98,18 @@ export default {
     stats: 'errors-only'
   },
   plugins: [
+    new OfflinePlugin({
+      excludes: ['fallback.js'],
+      ServiceWorker: {
+        events: true
+      }
+    }),
+    new CopyWebpackPlugin([
+      {
+        from: './src/assets/fallback.js',
+        to: './fallback.js'
+      }
+    ]),
     new Webpackbar(),
     new HappyPack({
       id: 'babel',
