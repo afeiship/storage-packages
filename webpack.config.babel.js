@@ -84,7 +84,13 @@ export default {
     hints: isDev ? false : 'warning'
   },
   optimization: {
-    minimizer: [new TerserWebpackPlugin(), new OptimizeCssAssetsWebpackPlugin()]
+    minimizer: [
+      new TerserWebpackPlugin(),
+      new OptimizeCssAssetsWebpackPlugin()
+    ],
+    splitChunks: {
+      chunks: 'all'
+    }
   },
   devServer: {
     host: '0.0.0.0',

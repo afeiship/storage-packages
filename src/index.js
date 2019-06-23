@@ -1,14 +1,26 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
 import nx from 'next-js-core2';
+import { ReduxAppBase, reduxRender } from 'next-react-redux';
 import delay from './components/delay';
 import './assets/styles/index.scss';
 
-class App extends React.Component {
+@reduxRender('app', { prefix: 'lite-kits', loadable: false })
+export default class extends ReduxAppBase {
+  static initialState(inStore) {
+    return {
+      memory: {
+        main: {
+          prop1: 'value1'
+        }
+      }
+    };
+  }
+
   async componentDidMount() {
-    console.log('start render!!!');
+    console.log('nx.$global', nx.$global);
     await delay(3000);
     console.log('3s later:', nx, nx.VERSION);
+    console.log(nx.$memory);
   }
 
   render() {
@@ -21,4 +33,4 @@ class App extends React.Component {
   }
 }
 
-ReactDOM.render(<App />, document.getElementById('app'));
+// ReactDOM.render(<App />, document.getElementById('app'));

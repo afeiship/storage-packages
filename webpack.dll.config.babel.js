@@ -8,7 +8,14 @@ export default {
   mode: process.env.NODE_ENV || 'production',
   entry: {
     react: ['react', 'react-dom'],
-    next: ['next-js-core2']
+    next: [
+      'next-js-core2',
+      'next-react-redux',
+      'next-chunk',
+      'next-time-chunk',
+      'next-guid',
+      'next-json'
+    ]
   },
   output: {
     path: resolve(__dirname, 'dist/'),
