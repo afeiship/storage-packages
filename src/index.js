@@ -3,8 +3,10 @@ import nx from 'next-js-core2';
 import { ReduxAppBase, reduxRender } from 'next-react-redux';
 import delay from './components/delay';
 import NxOfflineSw from 'next-offline-sw';
+import hotable from 'react-hmr-decorator';
 import './assets/styles/index.scss';
 
+@hotable(module)
 @reduxRender('app', { prefix: 'lite-kits', loadable: false })
 export default class extends ReduxAppBase {
   static initialState(inStore) {
@@ -36,6 +38,7 @@ export default class extends ReduxAppBase {
   }
 
   render() {
+    console.log('abc!');
     return (
       <div className="clearfix container">
         <h1 className="l">Hello readers!</h1>

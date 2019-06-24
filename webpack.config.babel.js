@@ -95,6 +95,7 @@ export default {
   devServer: {
     host: '0.0.0.0',
     port: 3006,
+    hot: true,
     stats: 'errors-only'
   },
   plugins: [

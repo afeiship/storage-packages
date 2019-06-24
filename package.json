@@ -110,6 +110,8 @@
     "next-time-chunk": "github:afeiship/next-time-chunk",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
+    "react-hmr-decorator": "github:afeiship/react-hmr-decorator",
+    "react-hot-loader": "^4.11.1",
     "webkit-sass-reset": "github:afeiship/webkit-sass-reset",
     "webkit-sassui-short-name": "github:afeiship/webkit-sassui-short-name"
   }
