@@ -38,11 +38,11 @@ export default class extends ReduxAppBase {
   }
 
   render() {
-    console.log('abc!');
+    console.log('abc!!');
     return (
       <div className="clearfix container">
-        <h1 className="l">Hello readers!</h1>
-        <span className="icon-audio r">RIGHT</span>
+        <h1 className="l">FEI__readers!</h1>
+        <span className="icon-audio r">RIGHT!</span>
       </div>
     );
   }
