@@ -3,13 +3,12 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
-  //打包模式:'production' or development'
   mode: 'production',
   entry: {
     app: './src/index.js',
   },
   output: {
-    path: path.resolve(__dirname, 'dist'), //path为打包后的输出文件夹位置，此处为 ./dist文件夹
+    path: path.resolve(__dirname, 'dist'),
     filename: 'bundle.js'
   },
   module: {
@@ -38,7 +37,7 @@ module.exports = {
       {
         test: /\.(css|scss)$/,
         use: [{
-          loader: MiniCssExtractPlugin.loader,  // MiniCssExtractPlugin.loader 需要在css-loader之后解析
+          loader: MiniCssExtractPlugin.loader,
         },
           'css-loader',
         ]
