@@ -6,5 +6,5 @@
 - [x] react/react-dom
 - [x] babel
 - [x] dart-sass
-- [x] min-css
+- [x] min-css(when: production)
 - [x] webpack-html-plugin

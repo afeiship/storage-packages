@@ -34,13 +34,20 @@ module.exports = {
           'sass-loader',
         ],
       },
+      // {
+      //   test: /\.(css|scss)$/,
+      //   use: [{
+      //     loader: MiniCssExtractPlugin.loader,
+      //   },
+      //     'css-loader',
+      //   ]
+      // },
       {
-        test: /\.(css|scss)$/,
-        use: [{
-          loader: MiniCssExtractPlugin.loader,
-        },
-          'css-loader',
-        ]
+        test: /\.jpe?g$/,
+        type: 'asset/resource',
+        generator: {
+          filename: 'images/[name].[hash:5].[ext]'
+        }
       }
     ],
   },
@@ -48,6 +55,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './public/index.html'
     }),
-    new MiniCssExtractPlugin(),
+    // new MiniCssExtractPlugin(),
   ]
 }
