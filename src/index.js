@@ -1,14 +1,6 @@
-import './styles/index.scss';
-
 import React from 'react';
 import ReactDOM from 'react-dom';
-
-const App = () => {
-  return (
-    <div>
-      <span>Hello React</span>
-    </div>
-  )
-}
+import './styles/index.scss';
+import App from './app';
 
 ReactDOM.render(<App/>, document.getElementById('root'));

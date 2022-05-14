@@ -1,5 +1,5 @@
 # boilerplate-webpack5
-> boilerplate for webpack + react.
+> boilerplate-webpack5-description
 
 
 ## features
