@@ -3,7 +3,19 @@
 **/npm-debug.log
 **/node_modules
 test
-__test__
+__tests__
 src
 build
 gulpfile.js
+rollup.config.js
+
+.editorconfig
+.prettierrc
+.prettierignore
+
+# vscode
+.vscode
+.history
+.github
+api
+docs
