@@ -8,6 +8,10 @@
     "name": "afeiship",
     "email": "1290657123@qq.com"
   },
+  "scripts": {
+    "start": "webpack-dev-server --mode development --open",
+    "build": "webpack"
+  },
   "license": "MIT",
   "publishConfig": {
     "access": "public",
@@ -15,6 +19,13 @@
   },
   "generator": "@jswork/generator-github",
   "devDependencies": {
-    "prettier": "^2.6.2"
+    "html-webpack-plugin": "^5.5.0",
+    "prettier": "^2.6.2",
+    "webpack": "^5.72.1",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.9.0"
+  },
+  "dependencies": {
+    "@jswork/next": "^1.0.9"
   }
 }

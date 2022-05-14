@@ -3,8 +3,8 @@
 
 
 ## features
-- [ ] pure webpack
+- [x] pure webpack
 - [ ] react/react-dom
 - [ ] dart-sass
 - [ ] min-css
-- [ ] webpack-html-plugin
+- [x] webpack-html-plugin
