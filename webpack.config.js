@@ -1,5 +1,6 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 
 module.exports = {
   //打包模式:'production' or development'
@@ -34,11 +35,20 @@ module.exports = {
           'sass-loader',
         ],
       },
+      {
+        test: /\.(css|scss)$/,
+        use: [{
+          loader: MiniCssExtractPlugin.loader,  // MiniCssExtractPlugin.loader 需要在css-loader之后解析
+        },
+          'css-loader',
+        ]
+      }
     ],
   },
   plugins: [
     new HtmlWebpackPlugin({
       template: './public/index.html'
-    })
+    }),
+    new MiniCssExtractPlugin(),
   ]
 }
