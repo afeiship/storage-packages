@@ -26,10 +26,6 @@ module.exports = {
       {
         test: /\.s[ac]ss$/i,
         use: [
-          // 在开发过程中回退到 style-loader
-          // process.env.NODE_ENV !== 'production'
-          //   ? 'style-loader'
-          //   : MiniCssExtractPlugin.loader,
           MiniCssExtractPlugin.loader,
           'css-loader',
           'sass-loader',
