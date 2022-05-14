@@ -26,22 +26,15 @@ module.exports = {
       {
         test: /\.s[ac]ss$/i,
         use: [
-          // 将 JS 字符串生成为 style 节点
-          'style-loader',
-          // 将 CSS 转化成 CommonJS 模块
+          // 在开发过程中回退到 style-loader
+          // process.env.NODE_ENV !== 'production'
+          //   ? 'style-loader'
+          //   : MiniCssExtractPlugin.loader,
+          MiniCssExtractPlugin.loader,
           'css-loader',
-          // 将 Sass 编译成 CSS
           'sass-loader',
         ],
       },
-      // {
-      //   test: /\.(css|scss)$/,
-      //   use: [{
-      //     loader: MiniCssExtractPlugin.loader,
-      //   },
-      //     'css-loader',
-      //   ]
-      // },
       {
         test: /\.jpe?g$/,
         type: 'asset/resource',
@@ -55,6 +48,6 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: './public/index.html'
     }),
-    // new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin(),
   ]
 }
