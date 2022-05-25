@@ -1,4 +1,4 @@
-(function() {
+(function () {
   var global = global || this || window || Function('return this')();
   var nx = global.nx || require('@jswork/next');
   var NxAbstractStorage = nx.AbstractStorage || require('@jswork/next-abstract-storage');
@@ -7,7 +7,7 @@
     extends: NxAbstractStorage,
     methods: {
       init: function (inPrefix) {
-        this.base({
+        this.$base.init.call(this, {
           engine: wx,
           prefix: inPrefix || ''
         });
