@@ -1,42 +1,25 @@
 {
-  "name": "boilerplate-webpack5",
+  "name": "@jswork/storage-packages",
   "private": true,
-  "version": "1.0.0",
-  "description": "boilerplate-webpack5-description",
-  "homepage": "https://js.work",
-  "author": {
-    "name": "afeiship",
-    "email": "1290657123@qq.com"
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  },
+  "devDependencies": {
+    "lerna": "^3.22.1"
   },
   "scripts": {
-    "start": "webpack-dev-server --mode development --open",
-    "build": "webpack"
+    "start": "yarn --cwd packages/websites start",
+    "lerna:clean": "lerna clean",
+    "lerna:list": "lerna list",
+    "lerna:bootstrap": "lerna bootstrap",
+    "build": "lerna run build --since master --no-private",
+    "publish": "npm run build && lerna publish --no-private"
   },
-  "license": "MIT",
-  "publishConfig": {
-    "access": "public",
-    "registry": "https://registry.npmjs.org"
-  },
-  "generator": "@jswork/generator-github",
-  "devDependencies": {
-    "@babel/preset-env": "^7.17.10",
-    "@babel/preset-react": "^7.16.7",
-    "babel-loader": "^8.2.5",
-    "css-loader": "^6.7.1",
-    "html-webpack-plugin": "^5.5.0",
-    "mini-css-extract-plugin": "^2.6.0",
-    "prettier": "^2.6.2",
-    "sass": "^1.51.0",
-    "sass-loader": "^12.6.0",
-    "style-loader": "^3.3.1",
-    "webpack": "^5.72.1",
-    "webpack-cli": "^4.9.2",
-    "webpack-dev-server": "^4.9.0"
-  },
-  "dependencies": {
-    "@babel/core": "^7.17.10",
-    "@jswork/next": "^1.0.9",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+  "homepage": "https://js.work",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/afeiship/storage-packages.git"
   }
 }
