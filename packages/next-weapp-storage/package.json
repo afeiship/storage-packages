@@ -1,6 +1,6 @@
 {
   "name": "@jswork/next-weapp-storage",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Storage for weapp based on next.",
   "homepage": "https://github.com/afeiship/next-weapp-storage",
   "author": {
@@ -36,7 +36,7 @@
     "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
-    "@jswork/next-abstract-storage": "^1.0.0"
+    "@jswork/next-abstract-storage": "^1.0.3"
   },
   "keywords": [
     "weapp",
