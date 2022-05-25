@@ -1,6 +1,6 @@
 {
   "name": "@jswork/next-gm-storage",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Storage implement for GM tampermonkey.",
   "homepage": "https://github.com/afeiship/next-gm-storage",
   "author": {
