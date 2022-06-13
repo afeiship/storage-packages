@@ -8,6 +8,10 @@
       lruStore.set('k1', 'v1');
     });
 
+    afterAll(() => {
+      lruStore.clear();
+    });
+
     test('method: set/get', function () {
       lruStore.set('foo', 'bar');
       expect(lruStore.get('foo')).toBe('bar');
