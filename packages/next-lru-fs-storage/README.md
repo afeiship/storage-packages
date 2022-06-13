@@ -11,16 +11,18 @@
 npm install -S @jswork/next-lru-fs-storage
 ```
 
-## apis
-| api | params | description   |
-|-----|--------|---------------|
-| get | -      | desc balabala |
-
 ## usage
 ```js
+// es6
 import NxLruFsStorage from '@jswork/next-lru-fs-storage';
+// es5
+const NxLruFsStorage = require('@jswork/next-lru-fs-storage');
 
-// code goes here:
+// apis
+cache.set('foo','bar')
+cache.get('foo')
+cache.sets({ 'test':'test-value' })
+cache.gets()
 ```
 
 ## license
