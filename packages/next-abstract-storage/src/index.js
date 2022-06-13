@@ -1,4 +1,4 @@
-(function() {
+(function () {
   var global = typeof window !== 'undefined' ? window : this || Function('return this')();
   var nx = global.nx || require('@jswork/next');
 
@@ -22,7 +22,8 @@
           get: this.options.get || 'getItem',
           set: this.options.set || 'setItem',
           remove: this.options.remove || 'removeItem',
-          clear: this.options.clear || 'clear'
+          clear: this.options.clear || 'clear',
+          save: this.options.save || 'save'
         };
       },
       serialize: function (inTarget) {
@@ -41,6 +42,7 @@
         } else {
           this.engine[this.accessor.set](this.__key(inKey), this.serialize(inValue));
         }
+        this.save();
       },
       sets: function (inObject) {
         nx.each(
@@ -76,6 +78,7 @@
       },
       del: function (inKey) {
         this.engine[this.accessor.remove](this.__key(inKey));
+        this.save();
       },
       dels: function (inKeys) {
         var keys = this.__keys(inKeys);
@@ -89,9 +92,13 @@
       },
       clear: function () {
         this.engine[this.accessor.clear]();
+        this.save();
       },
       keys: function () {
         return Object.keys(this.engine);
+      },
+      save: function () {
+        // @template method
       },
       __key: function (inKey) {
         var prefix = this.prefix;
