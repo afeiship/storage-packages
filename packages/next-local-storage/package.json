@@ -1,6 +1,6 @@
 {
   "name": "@jswork/next-local-storage",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "LocalStorage based on next.",
   "homepage": "https://github.com/afeiship/next-local-storage",
   "author": {
@@ -36,7 +36,7 @@
     "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
-    "@jswork/next-abstract-storage": "^1.0.4"
+    "@jswork/next-abstract-storage": "^1.0.5"
   },
   "keywords": [
     "localstorage",
