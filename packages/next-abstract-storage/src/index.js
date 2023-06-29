@@ -29,6 +29,9 @@ const NxAbstractStorage = nx.declare('nx.AbstractStorage', {
       return nx.parse(inString);
     },
     set: function (inKey, inValue) {
+      // del when nx.NIL
+      if (inValue === nx.NIL) return this.del(inKey);
+      // else set
       var index = inKey.indexOf('.');
       if (index > -1) {
         var paths = nx.slice2str(inKey, index, 1);

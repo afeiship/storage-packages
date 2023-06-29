@@ -1,7 +1,30 @@
 (function () {
   const NxAbstractStorage = require('../src');
+
+  // Mock LocalStorage
+  class LocalStorageMock {
+    constructor() {
+      this.store = {};
+    }
+
+    clear() {
+      this.store = {};
+    }
+
+    getItem(key) {
+      return this.store[key] || null;
+    }
+
+    setItem(key, value) {
+      this.store[key] = String(value);
+    }
+
+    removeItem(key) {
+      delete this.store[key];
+    }
+  }
   const store = new NxAbstractStorage({
-    engine: localStorage,
+    engine: new LocalStorageMock(),
     prefix: 'my'
   });
 
@@ -15,6 +38,13 @@
       // console.log(store.keys(), store.__keys());
       expect(k1).toBe('value1');
       expect(k2).toEqual({ name: 233 });
+    });
+
+    test.only('test nx.NIL should delete the key', () => {
+      store.set('k1', nx.NIL);
+      store.set('k2', 'abc')
+      expect(store.get('k1')).toBe(null);
+      expect(store.get('k2')).toBe('abc');
     });
 
     test('test method get', () => {
