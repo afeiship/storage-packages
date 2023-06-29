@@ -1,6 +1,6 @@
 {
   "name": "@jswork/next-gm-store-engine",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Store engin for tampermonkey GM_storage.",
   "homepage": "https://github.com/afeiship/next-gm-store-engine",
   "author": {

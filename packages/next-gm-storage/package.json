@@ -1,6 +1,6 @@
 {
   "name": "@jswork/next-gm-storage",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "Storage implement for GM tampermonkey.",
   "homepage": "https://github.com/afeiship/next-gm-storage",
   "author": {
@@ -36,8 +36,8 @@
     "registry": "https://registry.npmjs.org"
   },
   "dependencies": {
-    "@jswork/next-abstract-storage": "^1.0.5",
-    "@jswork/next-gm-store-engine": "^1.0.1"
+    "@jswork/next-abstract-storage": "^1.0.6",
+    "@jswork/next-gm-store-engine": "^1.0.5"
   },
   "keywords": [
     "next",
