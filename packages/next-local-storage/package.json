@@ -43,5 +43,8 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
+  },
+  "dependencies": {
+    "@jswork/next-abstract-storage": "^1.0.6"
   }
 }
