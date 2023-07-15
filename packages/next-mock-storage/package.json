@@ -1,6 +1,6 @@
 {
   "name": "@jswork/next-mock-storage",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Mock storage for mock storage api based on next.",
   "homepage": "https://github.com/afeiship/next-mock-storage",
   "author": {
