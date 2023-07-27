@@ -1,15 +1,5 @@
 declare var wx: any;
 
-const localStorage =
-  typeof wx === 'undefined'
-    ? self.localStorage
-    : {
-        getItem: (key: string) => wx.getStorageSync(key),
-        setItem: (key: string, val: string) => wx.setStorageSync(key, val),
-        removeItem: (key: string) => wx.removeStorageSync(key),
-        clear: () => wx.clearStorageSync(),
-      };
-
 class WeappLocalStorage {
   public static setItem(key: string, value: any) {
     wx.setStorageSync(key, value);
