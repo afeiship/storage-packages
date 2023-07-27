@@ -1,6 +1,6 @@
 {
   "name": "@jswork/next-mock-storage",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Mock storage for mock storage api based on next.",
   "homepage": "https://github.com/afeiship/next-mock-storage",
   "author": {
@@ -18,7 +18,7 @@
     "@babel/core": "^7.13.14",
     "@babel/preset-env": "^7.13.12",
     "@jswork/gulp-pkg-header": "^1.0.3",
-    "@jswork/next": "^1.1.10",
+    "@jswork/next": "^1.1.11",
     "del": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
