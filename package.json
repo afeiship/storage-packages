@@ -14,7 +14,7 @@
     "lerna:clean": "lerna clean",
     "lerna:list": "lerna list",
     "lerna:bootstrap": "lerna bootstrap",
-    "build:all": "lerna run build",
+    "build:all": "lerna run build --parallel",
     "build": "lerna run build --since master --no-private",
     "publish": "npm run build && lerna publish --no-private",
     "build:force": "lerna run build"
