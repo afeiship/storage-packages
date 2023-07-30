@@ -2,7 +2,7 @@ import nx from '@jswork/next';
 import '@jswork/next-abstract-storage';
 
 const NxSessionStorage = nx.declare('nx.SessionStorage', {
-  extends: NxAbstractStorage,
+  extends: nx.AbstractStorage,
   methods: {
     init: function (inPrefix) {
       this.$base.init.call(this, {
