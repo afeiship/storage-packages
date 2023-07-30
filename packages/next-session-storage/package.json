@@ -1,6 +1,6 @@
 {
   "name": "@jswork/next-session-storage",
-  "version": "1.0.0",
+  "version": "1.0.8",
   "description": "SessionStorage based on next.",
   "homepage": "https://js.work",
   "author": {
