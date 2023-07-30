@@ -1,0 +1,3 @@
+interface NxStatic {
+  SessionStorage: any;
+}

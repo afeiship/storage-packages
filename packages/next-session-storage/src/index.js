@@ -1,21 +1,20 @@
-(function () {
-  var global = global || this || window || Function('return this')();
-  var nx = global.nx || require('@jswork/next');
-  var NxAbstractStorage = nx.AbstractStorage || require('@jswork/next-abstract-storage');
+import nx from '@jswork/next';
+import '@jswork/next-abstract-storage';
 
-  var NxSessionStorage = nx.declare('nx.SessionStorage', {
-    extends: NxAbstractStorage,
-    methods: {
-      init: function (inPrefix) {
-        this.$base.init.call(this, {
-          engine: global.sessionStorage,
-          prefix: inPrefix || ''
-        });
-      }
+const NxSessionStorage = nx.declare('nx.SessionStorage', {
+  extends: NxAbstractStorage,
+  methods: {
+    init: function (inPrefix) {
+      this.$base.init.call(this, {
+        engine: global.sessionStorage,
+        prefix: inPrefix || ''
+      });
     }
-  });
-
-  if (typeof module !== 'undefined' && module.exports) {
-    module.exports = NxSessionStorage;
   }
-})();
+});
+
+if (typeof module !== 'undefined' && module.exports && typeof wx === 'undefined') {
+  module.exports = NxSessionStorage;
+}
+
+export default NxSessionStorage;
