@@ -1,6 +1,6 @@
 {
   "name": "@jswork/next-store",
-  "version": "1.0.12",
+  "version": "1.0.13",
   "description": "Storage for weapp based on next.",
   "homepage": "https://github.com/afeiship/next-store",
   "author": {
@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "@jswork/next-local-storage": "^1.0.10",
-    "@jswork/next-session-storage": "^1.0.9"
+    "@jswork/next-session-storage": "^1.0.10"
   },
   "keywords": [
     "next",
