@@ -19,7 +19,7 @@ const NxWeappStorage = nx.declare('nx.WeappStorage', {
       };
     },
     serialize: function (inTarget) {
-      return inTarget;
+      return typeof inTarget === 'string' ? inTarget : JSON.stringify(inTarget);
     },
     keys: function () {
       return wx.getStorageInfoSync().keys;
