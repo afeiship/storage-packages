@@ -30,7 +30,7 @@ const NxAbstractStorage = nx.declare('nx.AbstractStorage', {
     },
     set: function (inKey, inValue) {
       // del when nx.NIL
-      if (inValue === nx.NIL || inValue === null) return this.del(inKey)
+      if (inValue === nx.NIL || inValue == null) return this.del(inKey)
       // else set
       var index = inKey.indexOf('.')
       if (index > -1) {
