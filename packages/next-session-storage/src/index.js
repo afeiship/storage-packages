@@ -13,8 +13,8 @@ const NxSessionStorage = nx.declare('nx.SessionStorage', {
   }
 });
 
-if (typeof module !== 'undefined' && module.exports && typeof wx === 'undefined') {
-  module.exports = NxSessionStorage;
-}
+// if (typeof module !== 'undefined' && module.exports && typeof wx === 'undefined') {
+//   module.exports = NxSessionStorage;
+// }
 
 export default NxSessionStorage;

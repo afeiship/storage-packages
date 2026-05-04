@@ -23,8 +23,8 @@ class WeappLocalStorage {
 }
 
 // for commonjs es5 require
-if (typeof module !== 'undefined' && module.exports && typeof wx === 'undefined') {
-  module.exports = WeappLocalStorage;
-}
+// if (typeof module !== 'undefined' && module.exports && typeof wx === 'undefined') {
+//   module.exports = WeappLocalStorage;
+// }
 
 export default WeappLocalStorage;

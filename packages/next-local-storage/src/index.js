@@ -13,8 +13,8 @@ const NxLocalStorage = nx.declare('nx.LocalStorage', {
   }
 });
 
-if (typeof module !== 'undefined' && module.exports && typeof wx === 'undefined') {
-  module.exports = NxLocalStorage;
-}
+// if (typeof module !== 'undefined' && module.exports && typeof wx === 'undefined') {
+//   module.exports = NxLocalStorage;
+// }
 
 export default NxLocalStorage;

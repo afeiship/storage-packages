@@ -27,8 +27,8 @@ const NxWeappStorage = nx.declare('nx.WeappStorage', {
   }
 });
 
-if (typeof module !== 'undefined' && module.exports && typeof wx === 'undefined') {
-  module.exports = NxWeappStorage;
-}
+// if (typeof module !== 'undefined' && module.exports && typeof wx === 'undefined') {
+//   module.exports = NxWeappStorage;
+// }
 
 export default NxWeappStorage;

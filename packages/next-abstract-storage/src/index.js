@@ -125,8 +125,8 @@ const NxAbstractStorage = nx.declare('nx.AbstractStorage', {
   }
 })
 
-if (typeof module !== 'undefined' && module.exports && typeof wx === 'undefined') {
-  module.exports = NxAbstractStorage
-}
+// if (typeof module !== 'undefined' && module.exports && typeof wx === 'undefined') {
+//   module.exports = NxAbstractStorage
+// }
 
 export default NxAbstractStorage
